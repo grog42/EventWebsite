@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMETEventManagement.com</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="javascript/functions.js"></script>
+    <script src="javascript/php_interface.js"></script>
+    <script src="javascript/events-setup.js"></script>
+</head>
+<body>
+
+    <header class="common-grid">
+
+        <img src="images/uni_logo.jpg">
+        <a class="common-button" href="index.html">Home</a>
+        <a class="common-button" href="about.html">About</a>
+        <a class="common-button" id="user-butt" href="login.html">Login</a>
+        <a class="common-button" id="regi-butt" href="registration.html">Register</a>
+
+    </header>
+
+    <nav id="index-header">
+        <b>Upcoming events</b>
+
+        <select id="event-order-select" value="1" onchange="getEventRange(null, $('main'));">
+            <option value=1 >Nearest dates</option>
+            <option value=2 >Furthest dates</option>
+        </select>
+
+        <div id="event-search-box">
+            <input id="event-search-input" type="text" placeholder="Search.." onchange="">
+            <div id="event-search-results"></div>
+        </div>
+
+    </nav>
+
+    <main class="common-grid">
+
+    </main>
+
+    <button class="common-button" id="event-limit-extendor" value="6" onclick="value = parseInt(value) + 6; getEventRange(null, $('main'));">
+        See more
+    </button>
+
+    <small class="err-box"></small><br>
+
+</body>
+</html>
+
+<script>
+mainSetup();
+getEventRange(null, $('main'));
+</script>

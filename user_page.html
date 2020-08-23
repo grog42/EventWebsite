@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMETEventManagement.com</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="javascript/functions.js"></script>
+    <script src="javascript/php_interface.js"></script>
+    <script src="javascript/events-setup.js"></script>
+</head>
+<body>
+
+    <header class="common-grid">
+
+        <img src="images/uni_logo.jpg">
+        <a class="common-button" href="index.html">Home</a>
+        <a class="common-button" href="about.html">About</a>
+        <a class="common-button" id="user-butt" href="login.html">Login</a>
+        <a class="common-button" id="regi-butt" href="registration.html">Register</a>
+
+    </header>
+
+    <main id="user-page-main" class="common-grid">
+
+        <section id="user-page-head" class="common-box" ><h1>User events:</h1> <a class="common-button" href="add_event.html">Add event</a></section>
+
+        <section id="user-details-list" class="common-box">
+
+            <h1>User details:</h1>
+
+            <form id="user-editor-form">
+                <small class="err-box"></small><br>
+                <p>User name:</p>
+                <input type="text" name="userName" maxlength="20" onchange="verifyUserName(value)" required><br>
+            
+                <p>Password:</p>
+                <input type="password" name="password" maxlength="10" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,}"
+                title="Must contain at least one number and one uppercase and lowercase letter, and at least 7 or more characters"><br>
+            
+                <p>Title:</p>
+                <select name="title" required>
+                    <option value="Mr">Mr</option>
+                    <option value="Mrs">Mrs</option>
+                    <option value="Miss">Miss</option>
+                </select><br>
+            
+                <p>First name:</p>
+                <input type="text" name="firstName" maxlength="50" required><br>
+            
+                <p>Last name:</p>
+                <input type="text" name="lastName" maxlength="50" required><br>
+            
+                <p>Gender:</p>
+                <select name="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select><br>
+            
+                <p>Address 1:</p>
+                <input type="text" name="adress1" maxlength="50" required><br>
+            
+                <p>Address 2:</p>
+                <input type="text" name="adress2" maxlength="50"><br>
+            
+                <p>Address 3:</p>
+                <input type="text" name="adress3" maxlength="50"><br>
+            
+                <p>Postcode:</p>
+                <input type="text" name="postcode" maxlength="10" required><br>
+            
+                <p>Description:</p>
+                <textarea rows="4" cols="30" name="description" maxlength="200"></textarea><br>
+            
+                <p>Email:</p>
+                <input type="email" name="email" maxlength="100" required pattern="[a-z0-9]+@[a-z0-9.-]+\.[a-z]{1,}$" title="Invalid format"><br>
+            
+                <p>Telephone:</p>
+                <input type="text" name="telephone" maxlength="15" required><br>
+            
+                <p>Profile URL:</p>
+                <input type="URL" name="profileURL" maxlength="100"><br>
+
+                <input class="common-button" type="submit" name="submit" value="Edit"><br>
+                <small class="err-box"></small>
+            </form>
+
+            <details class="common-box">
+                <h2>Input restrictions:</h2>
+                
+                <b>User name:</b><p> char limit: 20</p>
+                <b>Password:</b><p> 7 characters long, At least 1 number, At least 1 Uppercase, At least 1 lowercase</p>
+                <b>Description:</b><p> char limit: 200</p>
+            </details>
+        </section>
+    </main>
+
+</body>
+</html>
+
+<script>
+mainSetup();
+getEventRange(sessionStorage.getItem("userId"), $('#user-page-main'));
+getUser();
+</script>

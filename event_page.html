@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMETEventManagement.com</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="javascript/functions.js"></script>
+    <script src="javascript/php_interface.js"></script>
+    <script src="javascript/events-setup.js"></script>
+</head>
+<body>
+
+    <header class="common-grid">
+
+        <img src="images/uni_logo.jpg">
+        <a class="common-button" href="index.html">Home</a>
+        <a class="common-button" href="about.html">About</a>
+        <a class="common-button" id="user-butt" href="login.html">Login</a>
+        <a class="common-button" id="regi-butt" href="registration.html">Register</a>
+
+    </header>
+
+    <main id="event-page-main" class="common-grid">
+        <section id="event-page-box" class="common-box">
+            <h2 id="event-name-dis"></h2>
+            
+            <h2 id="event-date-dis"></h2>
+
+            <h2 id="event-location-dis"></h2>
+
+            <h3>Keywords:</h3>
+            <p id="event-keywords-dis"></p>
+
+            <h3>Description:</h3>
+            <p id="event-desc-dis"></p>
+        </section>
+
+        <aside class="common-box">
+            <video controls autoplay>
+                <source id="event-video-dis" type="video/mp4">
+            </video>
+        </aside>
+
+        <aside class="common-box">
+            <img class="event-image">
+        </aside>
+    </main>
+
+</body>
+</html>
+
+<script>
+mainSetup();
+getEvent(getUrlParams(window.location.search));
+</script>

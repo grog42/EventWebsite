@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMETEventManagement.com</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="javascript/functions.js"></script>
+    <script src="javascript/php_interface.js"></script>
+    <script src="javascript/events-setup.js"></script>
+</head>
+<body>
+
+    <header class="common-grid">
+
+        <img src="images/uni_logo.jpg">
+        <a class="common-button" href="index.html">Home</a>
+        <a class="common-button" href="about.html">About</a>
+        <a class="common-button" id="user-butt" href="login.html">Login</a>
+        <a class="common-button" id="regi-butt" href="registration.html">Register</a>
+
+    </header>
+
+    <main class="common-grid">
+        <section class="common-box event-form-box">
+            <h1>Event builder:</h1>
+            <form id="event-build-form" method="post">
+                <small class="err-box"></small><br>
+            
+                <p>Name:</p>
+                <input type="text" name="name" required maxlength="100"><br>
+            
+                <p>Description:</p>
+                <textarea name="description" required maxlength="500"></textarea><br>
+            
+                <p>Category:</p>
+                <input type="text" name="category" required maxlength="50"><br>
+            
+                <p>Keywords:</p>
+                <input type="text" name="keywords" required maxlength="100"><br>
+            
+                <p>Location:</p>
+                <input type="text" name="location" required maxlength="100"><br>
+            
+                <p>Video:</p>
+                <input type="URL" name="videoURL" maxlength="100"><br>
+            
+                <p>Image:</p>
+                <input type="URL" name="imageURL" maxlength="100"><br>
+            
+                <p>Start:</p>
+                <input type="date" name="startDate" required><br>
+            
+                <p>End:</p>
+                <input type="date" name="endDate" required><br>
+            
+                <input class="common-button" type="submit" name="submit"><br>
+            
+                <small class="err-box"></small>
+            </form>
+        </section>
+
+        <aside class="common-box common-restric-box">
+            <h2>Input restrictions</h2>
+
+            <b>Name:</b><p> char limit: 100</p>
+            <b>Description:</b><p> char limit: 500</p>
+        </aside>
+    </main>
+
+</body>
+</html>
+
+<script>
+mainSetup();
+</script>
